@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#07111b">
+  <title>Neon Harbor — Open City</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {"imports":{"three":"https://unpkg.com/three@0.169.0/build/three.module.js"}}
+  </script>
+  <script type="module" src="game.js"></script>
+</head>
+<body>
+  <div id="game"></div>
+  <div class="vignette"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Neon Harbor home"><span class="brand-mark">N</span><span>NEON<span class="brand-light">HARBOR</span><small>FREE ROAM · EST. 2049</small></span></a>
+    <div class="location"><span class="live-dot"></span><span id="district">SUNSET DISTRICT</span><i>—</i><span id="clock">18:42</span></div>
+    <div class="top-right"><span class="weather">☀ <b>28°</b></span><span class="avatar">J</span><span class="profile">JAX<br><small>LEVEL 04</small></span></div>
+  </header>
+  <main class="hud">
+    <section class="mission-card glass">
+      <div class="eyebrow"><span class="eyebrow-line"></span> CITY STORIES <span class="chapter">01 / 03</span></div>
+      <h1>THE LONG<br><em>WAY HOME</em></h1>
+      <p>Pick up the signal drops scattered around the city. Take your time. This town is yours.</p>
+      <div class="mission-progress"><div class="progress-copy"><span>SIGNAL DROPS</span><b id="drop-count">0 <small>/ 5</small></b></div><div class="progress-track"><i id="progress-fill"></i></div></div>
+      <div class="objective"><span class="objective-icon">⌖</span><span id="objective">Find the glowing signal drops</span></div>
+    </section>
+    <section class="right-stack">
+      <div class="minimap-card glass"><div class="mini-head"><span>NEARBY</span><span class="compass">N <b>↑</b></span></div><canvas id="minimap" width="180" height="180"></canvas><div class="map-foot"><span class="map-dot"></span> YOU ARE HERE <span class="map-distance" id="nearest">—</span></div></div>
+      <div class="cash-card glass"><div class="cash-label">WALLET <span>◆</span></div><div class="cash-value">$<b id="cash">2,450</b></div><div class="cash-sub">+ <span id="earned">0</span> TODAY</div></div>
+    </section>
+    <section class="bottom-left glass"><div class="status-row"><span class="status-label">VITALS</span><span class="status-value">100%</span></div><div class="health-track"><i></i></div><div class="status-row stamina-row"><span class="status-label">STAMINA</span><span class="status-value" id="mode-label">ON FOOT</span></div><div class="health-track stamina"><i id="stamina-fill"></i></div></section>
+    <section class="bottom-right"><div class="speed-card glass" id="speed-card"><span class="speed-kicker">GROUND SPEED</span><div><b id="speed">00</b><small>KM/H</small></div><div class="gear"><span>GEAR</span> <b id="gear">P</b></div></div><div class="controls glass"><span class="key">W</span><span class="key">A</span><span class="key">S</span><span class="key">D</span><span class="control-help">MOVE <i>·</i> DRIVE</span><span class="key key-wide">E</span><span class="control-help">ENTER / EXIT</span></div></section>
+    <div class="interaction glass" id="interaction"><span class="key key-wide">E</span><span id="interaction-text">ENTER VEHICLE</span></div>
+    <div class="toast" id="toast"></div>
+    <div class="reticle">+</div>
+  </main>
+  <div class="mobile-controls" aria-label="Touch controls"><div class="dpad"><button data-key="w">▲</button><div><button data-key="a">◀</button><button data-key="s">▼</button><button data-key="d">▶</button></div></div><div class="mobile-actions"><button id="mobile-action">ENTER</button><button data-key="shift">RUN</button></div></div>
+  <div class="loading" id="loading"><div class="load-logo">N</div><div class="load-title">NEON HARBOR</div><div class="load-sub">WAKING UP THE CITY</div><div class="load-track"><i></i></div><small>USE WASD TO EXPLORE · PRESS E TO DRIVE</small></div>
+  <script nomodule>document.body.innerHTML='Please open this game in a modern browser with WebGL support.';</script>
+</body>
+</html>
